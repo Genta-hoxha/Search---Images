@@ -68,11 +68,13 @@ displayCard.innerHTML = "";
 // displayCard.insertAdjacentHTML("beforeend", html);
 if (Array.isArray(dataJson.photos)) {
   dataJson.photos.forEach((photo) => {
+    const likeImage = photo.liked ? "/img/Love.png" : "/img/Love_Heart.png";
     const html = `
     <div class="card" style = "height:550px">
       <img class="card-img-top" src="${photo.src.original}" alt="${photo.alt}" />
       <button class="heart"    style="padding-right: 260px">
-        <img src="/img/Love_Heart.png" style="left: -170px; width: 40px; height: 40px;" />
+    
+      <img src="${likeImage}" style="left: -170px; width: 40px; height: 40px;" />
       </button>
       <div class="card-body" style=" width: 65%;
       text-align: left;
