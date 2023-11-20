@@ -62,7 +62,7 @@ function displayImage(apiUrl) {
           const html = `
                   <div class="card" style="height:550px">
                     <img class="card-img-top" id="image" src="${photo.src.original}" alt="${photo.alt}" />
-                    <button class="heart" id="heartlike"  style="padding-right: 260px">
+                    <button class="heart" id="heartlike" src="/img/Love_Heart.png" style="padding-right: 260px">
                       <img src="${likeImage}" style="width: 40px; height: 40px;" />
                       <img id="heartfull" src = "/img/Love.png" hidden>
 
@@ -94,23 +94,6 @@ function displayImage(apiUrl) {
             captionText.innerHTML = this.alt;
           });
         });
-
-        const heartImages = document.getElementById("heartlike");
-        const heartFull = document.getElementById("heartfull");
-
-        // heartFull.addEventListener("click", function () {
-        //   if (heartlike.src.endsWith("/img/Love_Heart.png")) {
-        //     heartlike.src = "/img/Love.png";
-        //   } else {
-        //     heartlike.src = "/img/Love_Heart.png";
-        //   }
-        // });
-        // heartImages.forEach((heart) => {
-        //   heart.addEventListener("click", function () {
-        //     document.getElementById("heartlike").src = "/img/Love.png";
-        //     console.log("genta");
-        //   });
-        // });
 
         //CLOSE BUTTON
         closeModalBtn.onclick = function () {
