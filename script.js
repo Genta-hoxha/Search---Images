@@ -6,7 +6,7 @@ const api = {
 function displayImage(apiUrl) {
   const displayCard = document.getElementById("container");
   displayCard.innerHTML = "";
-  // Display skeleton loading effect
+  // Shfaqim skeleton
   for (let i = 0; i < 10; i++) {
     const skeletonHtml = `
      <a class="card" target="_blank" >
@@ -42,7 +42,7 @@ function displayImage(apiUrl) {
     })
     .then((data) => {
       console.log(data);
-      // Remove skeleton
+      // Heqim skeletonin
       displayCard.innerHTML = "";
 
       const modalHtml = `

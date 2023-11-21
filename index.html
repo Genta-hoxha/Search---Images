@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,161 +33,11 @@
     <div id="imageContainer"></div> 
 </div>  
 
-<!-- <div class="skeleton-header"> -->
-  <!-- <h1 class="skeleton-headertext">Image Search App</h1>
-  <input type="text" id="searchInput" placeholder="Search for images">
-    <button id="searchButton" >Search</button>
-  <div id="imageContainer"></div> -->
-<!-- </div> -->
-
   <br>
-  <!-- <div id="skeletonLoader" class="skeleton-loader"></div> -->
   <div class="flex-container" id="container">
 
 </br>
 
     </div>
   </body>
-<!--
-    <script>
-const api = {
-  url: "https://api.pexels.com/v1/search?query=cat",
-  key: "563492ad6f9170000100000172e40c73ea194f8589f3de8585118b13",
-};
-
-function displayImage(apiUrl) {
-  const displayCard = document.getElementById("container");
-  displayCard.innerHTML = "";
-
-  // Display skeleton loading effect
-  const skeletonHtml = `
-    <div class="skeleton-container">
-      <div class="skeleton-image"></div>
-      <div class="skeleton-details">
-        <div class="skeleton-title"></div>
-        <div class="skeleton-description"></div>
-      </div>
-    </div>
-  `;
-  displayCard.innerHTML = skeletonHtml;
-
-  fetch(apiUrl, {
-    headers: {
-      Authorization: api.key,
-    },
-  })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Image not found 😏");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      // Remove the skeleton loading effect
-      displayCard.innerHTML = "";
-
-      const modalHtml = `
-        <div class="modal">
-          <span class="close">&times;</span>
-          <img class="modal-content" id="img01" style="background-color: transparent; border-color: transparent" >
-          <div id="caption"></div>
-        </div>
-      `;
-      displayCard.insertAdjacentHTML("beforeend", modalHtml);
-
-      if (Array.isArray(data.photos)) {
-        data.photos.forEach((photo) => {
-          const likeImage = photo.liked
-            ? "/img/Love.png"
-            : "/img/Love_Heart.png";
-          const html = `
-            <div class="card" style="height:550px">
-              <img class="card-img-top" id="image" src="${photo.src.original}" alt="${photo.alt}" />
-              <button class="heart" id="heartlike"  style="padding-right: 260px">
-                <img src="${likeImage}" style="width: 40px; height: 40px;" />
-                <img id="heartfull" src = "/img/Love.png" hidden>
-              </button>
-              <div class="card-body" style="width: 65%; text-align: left; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-                <h4 class="card-title">${photo.photographer}</h4>
-                <p class="card-text">
-                  <span>Description:</span> ${photo.alt}
-                </p>
-              </div>
-            </div>
-          `;
-
-          displayCard.insertAdjacentHTML("beforeend", html);
-        });
-
-        const images = document.querySelectorAll("#image");
-        const modal = document.querySelector(".modal");
-
-        const modalImg = document.getElementById("img01");
-        const captionText = document.getElementById("caption");
-        const closeModalBtn = document.querySelector(".close");
-
-        images.forEach((image) => {
-          image.addEventListener("click", function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-          });
-        });
-
-        const heartImages = document.querySelectorAll("#heartlike img");
-        const heartFull = document.querySelectorAll("#heartfull img");
-
-        heartImages.forEach((heart) => {
-          heart.addEventListener("click", function () {
-            heartFull === heartImages;
-            console.log("genta");
-          });
-        });
-
-        // CLOSE BUTTON
-        closeModalBtn.onclick = function () {
-          modal.style.display = "none";
-        };
-
-        // ESC FUNCTION
-        document.addEventListener("keyup", function (event) {
-          if (event.key === "Escape") {
-            modal.style.display = "none";
-          }
-        });
-      }
-    })
-    .catch((error) => {
-      console.error("Error images:", error.message);
-    });
-}
-
-const searchBox = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchButton");
-
-displayImage(api.url);
-
-searchBtn.addEventListener("click", function () {
-  const query = searchBox.value;
-  if (query) {
-    const apiUrl = `https://api.pexels.com/v1/search?query=${query}`;
-    displayImage(apiUrl);
-  }
-});
-
-// FUNKSIONI PER ENTER
-searchBox.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const query = searchBox.value;
-    if (query) {
-      const apiUrl = `https://api.pexels.com/v1/search?query=${query}`;
-      displayImage(apiUrl);
-    }
-  }
-});
-
-
-  </script>
--->
 </html>
